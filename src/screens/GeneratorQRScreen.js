@@ -42,7 +42,6 @@ export default function GeneratorQRScreen() {
 
   return (
     <View style={styles.mainContainer}>
-      {/* Fondo decorativo similar al mockup */}
       <View style={styles.glowSpot} />
       
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>

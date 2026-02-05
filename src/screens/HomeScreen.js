@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; // Asegúrate de tener expo-linear-gradient instalado
+import { LinearGradient } from 'expo-linear-gradient'; 
 
 const { width } = Dimensions.get('window');
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Círculos decorativos para el efecto Glass detrás */}
       <View style={styles.circle1} />
       <View style={styles.circle2} />
 

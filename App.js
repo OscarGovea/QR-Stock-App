@@ -19,18 +19,16 @@ export default function App() {
         initialRouteName="Home"
         screenOptions={{ 
           headerTransparent: true, 
-          headerTintColor: '#d1dcebff', // Tu color de texto
+          headerTintColor: '#d1dcebff', 
           headerTitleAlign: 'center',
-          
-          // --- AQUÍ ESTÁ EL TRUCO PARA IOS ---
-          headerBackTitleVisible: false, // Oculta el texto
-          headerLeftContainerStyle: { paddingLeft: 10 }, // Da espacio a la flecha
+          headerBackTitleVisible: false,
+          headerLeftContainerStyle: { paddingLeft: 10, paddingTop: Platform.OS === 'ios' ? 28 : 0 },
           
           headerTitleStyle: { 
             fontWeight: '900', 
             fontSize: 18,
             letterSpacing: 1,
-            marginTop: Platform.OS === 'ios' ? 10 : 0 // Ajuste fino para la caída
+            marginTop: Platform.OS === 'ios' ? 20 : 0
           },
 
           headerBackground: () => (
@@ -42,7 +40,7 @@ export default function App() {
           name="Home" 
           component={HomeScreen} 
           options={{ 
-            title: 'Inicio', // Título principal
+            title: 'Inicio', 
           }} 
         />
         <Stack.Screen 
@@ -50,7 +48,6 @@ export default function App() {
           component={GeneratorQRScreen} 
           options={{ 
             title: 'REGISTRAR',
-            // Refuerzo por si una pantalla específica se resiste:
             headerBackTitle: '', 
           }} 
         />
@@ -69,11 +66,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   customHeaderDrop: {
-    backgroundColor:'rgba(0, 0, 0, 0.5)', // Tu color petróleo
+    backgroundColor:'rgba(0, 0, 0, 0.5)',
     height: Platform.OS === 'ios' ? 130 : 100, 
     borderBottomLeftRadius: 40, 
     borderBottomRightRadius: 40,
-    shadowColor: 'rgba(3, 63, 48, 1)', // Tu sombra verde/petróleo
+    shadowColor: 'rgba(3, 63, 48, 1)',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.6,
     shadowRadius: 10,
